@@ -4,7 +4,7 @@
 #
 Pod::Spec.new do |s|
   s.name             = 'twilio_voice'
-  s.version          = '0.0.7'
+  s.version          = '0.0.8'
   s.summary          = 'Provides an interface to Twilio&#x27;s Programmable Voice SDK to allows adding voice-over-IP (VoIP) calling into your Flutter applications.'
   s.description      = <<-DESC
   Provides an interface to Twilio&#x27;s Programmable Voice SDK to allows adding voice-over-IP (VoIP) calling into your Flutter applications.
@@ -13,9 +13,9 @@ Pod::Spec.new do |s|
   s.license          = { :file => '../LICENSE' }
   s.author           = { 'Diego Garcia' => 'diego_gr_94@hotmail.com' }
   s.source           = { :path => '.' }
-  s.source_files = 'Classes/**/*'
+  s.source_files = 'Classes/**/*'                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     o 
   s.dependency 'Flutter'
-  s.dependency 'TwilioVoice','~> 6.3.1'
+  s.dependency 'TwilioVoice','~> 6.5.2'
   s.platform = :ios, '11.0'
 
   # Flutter.framework does not contain a i386 slice.
