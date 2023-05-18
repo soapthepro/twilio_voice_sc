@@ -151,6 +151,7 @@ public class AnswerJavaActivity extends AppCompatActivity {
         if (activeCallInvite != null) {
             String fromId = activeCallInvite.getFrom();
             String fromName = fromId.replace("client:", "");
+            fromName = fromName.replace("_", " ");
             if(fromName == null) {
                 fromName = getString(R.string.unknown_caller);
             }
