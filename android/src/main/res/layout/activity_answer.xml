@@ -91,21 +91,25 @@
 
         </LinearLayout>
     </LinearLayout>
+
     <LinearLayout
         android:id="@+id/constraintLayout26"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="horizontal"
+        android:layout_height="wrap_content"
         android:layout_gravity="center_vertical"
-        android:layout_weight="0.7"
+        android:paddingVertical="3000dp"
         android:gravity="center"
-        >
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
         <ImageView
             android:id="@+id/imageView"
             android:layout_width="162dp"
             android:layout_height="167dp"
-            tools:srcCompat="@mipmap/sc_opaque"
-            android:contentDescription="@string/scLogo" />
+            android:contentDescription="@string/scLogo"
+            tools:srcCompat="@mipmap/sc_opaque" />
     </LinearLayout>
     <LinearLayout
             android:id="@+id/constraintLayout13"
