@@ -92,6 +92,24 @@
         </LinearLayout>
     </LinearLayout>
     <LinearLayout
+        android:id="@+id/constraintLayout26"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        android:layout_gravity="center_vertical"
+        android:layout_weight="0.7"
+        android:gravity="center"
+        >
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="162dp"
+        android:layout_height="167dp"
+        tools:layout_editor_absoluteX="124dp"
+        tools:layout_editor_absoluteY="272dp"
+        tools:srcCompat="@mipmap/sc_opaque"
+         />
+    </LinearLayout>
+    <LinearLayout
             android:id="@+id/constraintLayout13"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -160,13 +178,5 @@
         </LinearLayout>
 
     </LinearLayout>
-
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="162dp"
-        android:layout_height="167dp"
-        tools:layout_editor_absoluteX="124dp"
-        tools:layout_editor_absoluteY="272dp"
-        tools:srcCompat="@mipmap/sc_opaque" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
