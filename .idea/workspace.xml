@@ -6,8 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="a7fcd896-b8a2-43d1-a581-6a6dbc7b41e1" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/src/main/java/com/twilio/twilio_voice/AnswerJavaActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/android/src/main/java/com/twilio/twilio_voice/AnswerJavaActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/src/main/java/com/twilio/twilio_voice/IncomingCallNotificationService.java" beforeDir="false" afterPath="$PROJECT_DIR$/android/src/main/java/com/twilio/twilio_voice/IncomingCallNotificationService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,7 +39,7 @@
     "RunOnceActivity.cidr.known.project.marker": "true",
     "cidr.known.project.marker": "true",
     "dart.analysis.tool.window.visible": "false",
-    "last_opened_file_path": "C:/Users/Ayush/Desktop/twilio_voice_sc",
+    "last_opened_file_path": "C:/Users/Ayush/Desktop/twilio_voice_sc/android",
     "show.migrate.to.gradle.popup": "false"
   }
 }]]></component>
