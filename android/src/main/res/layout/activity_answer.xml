@@ -100,14 +100,12 @@
         android:layout_weight="0.7"
         android:gravity="center"
         >
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="162dp"
-        android:layout_height="167dp"
-        tools:layout_editor_absoluteX="124dp"
-        tools:layout_editor_absoluteY="272dp"
-        tools:srcCompat="@mipmap/sc_opaque"
-         />
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="162dp"
+            android:layout_height="167dp"
+            tools:srcCompat="@mipmap/sc_opaque"
+            android:contentDescription="@string/scLogo" />
     </LinearLayout>
     <LinearLayout
             android:id="@+id/constraintLayout13"
