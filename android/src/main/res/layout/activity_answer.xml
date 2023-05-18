@@ -103,11 +103,11 @@
     </LinearLayout>
         <ImageView
             android:id="@+id/imageView"
-            android:layout_width="wrap_content"
+            android:layout_width="250dp"
             android:paddingTop="50dp"
-            android:layout_height="wrap_content"
+            android:layout_height="250dp"
             android:contentDescription="@string/scLogo"
-            tools:srcCompat="@mipmap/sc_opaque" />
+            tools:srcCompat="@raw/sc_opaque" />
     </LinearLayout>
     <LinearLayout
             android:id="@+id/constraintLayout13"
