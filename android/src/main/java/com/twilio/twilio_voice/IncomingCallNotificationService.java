@@ -261,7 +261,7 @@ public class IncomingCallNotificationService extends Service {
     private void buildMissedCallNotification(String callerId, String to, boolean showReturnCallOption) {
 
         String fromId = callerId.replace("client:", "");
-        fromId = fromId.replace("_", " ");
+//        fromId = fromId.replace("_", " ");
         Context context = getApplicationContext();
         SharedPreferences preferences = context.getSharedPreferences(TwilioPreferences, Context.MODE_PRIVATE);
         String callerName = preferences.getString(fromId, preferences.getString("defaultCaller", "Unknown caller"));
