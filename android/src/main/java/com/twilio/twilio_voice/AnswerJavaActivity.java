@@ -149,7 +149,7 @@ public class AnswerJavaActivity extends AppCompatActivity {
     private void configCallUI() {
         Log.d(TAG, "configCallUI");
         if (activeCallInvite != null) {
-            String fromName = activeCallInvite.getCustomParameters().get("caller_name");
+            String fromName = activeCallInvite.getFrom();
             if(fromName == null) {
                 fromName = getString(R.string.unknown_caller);
             }
