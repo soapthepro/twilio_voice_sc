@@ -91,7 +91,7 @@ public class IncomingCallNotificationService extends Service {
         if(caller == null) {
             caller = getString(R.string.unknown_caller);
         }
-
+        caller = caller.replace("client:", "");
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
             Log.i(TAG, "building notification for new phones");
             return buildNotification(getApplicationName(context), getString(R.string.new_call, caller),
@@ -243,7 +243,7 @@ public class IncomingCallNotificationService extends Service {
         boolean prefsShow = preferences.getBoolean("show-notifications", true);
         boolean allowReturnCalls = preferences.getBoolean("show-return-call-option", true);
         if (prefsShow && allowReturnCalls) {
-            buildMissedCallNotification(cancelledCallInvite.getFrom(), cancelledCallInvite.getTo(), allowReturnCalls);
+            buildMissedCallNotification(cancelledCallInvite.getFrom(), cancelledCallInvite.getTo(), false);
         }
         endForeground();
         LocalBroadcastManager.getInstance(this).sendBroadcast(intent);
@@ -311,7 +311,7 @@ public class IncomingCallNotificationService extends Service {
     }
 
     private void handleIncomingCall(CallInvite callInvite, int notificationId) {
-        Log.i(TAG, "handle incomming call");
+        Log.i(TAG, "handle incoming call");
         SoundPoolManager.getInstance(this).playRinging();
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
             setCallInProgressNotification(callInvite, notificationId);
