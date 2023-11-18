@@ -6,9 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="a7fcd896-b8a2-43d1-a581-6a6dbc7b41e1" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/src/main/res/layout/activity_background_call.xml" beforeDir="false" afterPath="$PROJECT_DIR$/android/src/main/res/layout/activity_background_call.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/src/main/res/values-es-rMX/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/android/src/main/res/values-es-rMX/strings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ios/Classes/SwiftTwilioVoicePlugin.swift" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Classes/SwiftTwilioVoicePlugin.swift" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,7 +39,7 @@
     "RunOnceActivity.cidr.known.project.marker": "true",
     "cidr.known.project.marker": "true",
     "dart.analysis.tool.window.visible": "false",
-    "last_opened_file_path": "C:/Users/Ayush/Desktop/twilio_voice_sc/android",
+    "last_opened_file_path": "C:/Users/Ayush/Documents/SC_Flutter/4.4",
     "show.migrate.to.gradle.popup": "false"
   }
 }]]></component>
