@@ -9,6 +9,7 @@ import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.pm.PackageManager;
 import android.content.SharedPreferences;
+import android.content.ComponentName;
 import android.nfc.Tag;
 import android.os.Build;
 import android.os.Bundle;
@@ -55,6 +56,10 @@ public class AnswerJavaActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        Intent intent = new Intent();
+        intent.setComponent(new ComponentName("com.theclosecompany.sales_book", "com.theclosecompany.sales_book.MainActivity"));
+        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        startActivity(intent);
         setContentView(R.layout.activity_answer);
 
         tvUserName = (TextView) findViewById(R.id.tvUserName);

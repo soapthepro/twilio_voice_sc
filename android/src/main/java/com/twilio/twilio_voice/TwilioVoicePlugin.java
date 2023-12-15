@@ -131,10 +131,6 @@ public class TwilioVoicePlugin implements FlutterPlugin, MethodChannel.MethodCal
 
             switch (action) {
                 case Constants.ACTION_INCOMING_CALL:
-                    Intent intent = new Intent();
-                    intent.setComponent(new ComponentName("com.theclosecompany.sales_book", "com.theclosecompany.sales_book.MainActivity"));
-                    intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                    startActivity(intent);
                     handleIncomingCall(activeCallInvite.getFrom(), activeCallInvite.getTo());
                     if (Build.VERSION.SDK_INT >= 29 && !isAppVisible()) {
                         break;
