@@ -50,7 +50,6 @@ import io.flutter.plugin.common.MethodChannel.Result;
 import io.flutter.plugin.common.PluginRegistry;
 
 import static java.lang.Boolean.getBoolean;
-import com.theclosecompany.sales_book.MainActivity;
 
 public class TwilioVoicePlugin implements FlutterPlugin, MethodChannel.MethodCallHandler, EventChannel.StreamHandler,
         ActivityAware, PluginRegistry.NewIntentListener {
@@ -132,6 +131,10 @@ public class TwilioVoicePlugin implements FlutterPlugin, MethodChannel.MethodCal
 
             switch (action) {
                 case Constants.ACTION_INCOMING_CALL:
+                    Intent intent = new Intent();
+                    intent.setComponent(new ComponentName("com.theclosecompany.sales_book", "com.theclosecompany.sales_book.MainActivity"));
+                    intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                    startActivity(intent);
                     Intent startAppIntent = new Intent(context, MainActivity.class);
                     startAppIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                     context.startActivity(startAppIntent);
