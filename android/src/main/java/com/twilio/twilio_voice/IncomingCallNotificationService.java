@@ -154,18 +154,12 @@ public class IncomingCallNotificationService extends Service {
         acceptIntent.putExtra(Constants.INCOMING_CALL_INVITE, callInvite);
         acceptIntent.putExtra(Constants.INCOMING_CALL_NOTIFICATION_ID, notificationId);
        PendingIntent piAcceptIntent = PendingIntent.getService(getApplicationContext(), 0, acceptIntent, flags);
-        Intent mainActivityIntent = new Intent();
-        mainActivityIntent.setComponent(new ComponentName("com.theclosecompany.sales_book", "com.theclosecompany.sales_book.MainActivity"));
-        mainActivityIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-        PendingIntent mainActivityPendingIntent = PendingIntent.getActivity(this, 0, mainActivityIntent, flags);
-
         long[] mVibratePattern = new long[]{0, 400, 400, 400, 400, 400, 400, 400};
         Notification.Builder builder =
                 new Notification.Builder(getApplicationContext(), channelId)
                         .setSmallIcon(R.drawable.ic_call_end_white_24dp)
                         .setContentTitle(title)
                         .setContentText(text)
-                        .setContentIntent(mainActivityPendingIntent)
                         .setCategory(Notification.CATEGORY_CALL)
                         .setFullScreenIntent(pendingIntent, true)
                         .setExtras(extras)
@@ -213,7 +207,7 @@ public class IncomingCallNotificationService extends Service {
             Log.i(TAG, "Creating answer broadcast intent");
             activeCallIntent = new Intent();
         }
-
+        activeCallIntent.setComponent(new ComponentName("com.theclosecompany.sales_book", "com.theclosecompany.sales_book.MainActivity"));
         activeCallIntent.addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);
         activeCallIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         activeCallIntent.putExtra(Constants.INCOMING_CALL_INVITE, callInvite);
