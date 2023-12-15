@@ -172,10 +172,6 @@ public class AnswerJavaActivity extends AppCompatActivity {
                     rejectCallClickListener();
                 }
             });
-            Intent intent = new Intent();
-            intent.setComponent(new ComponentName("com.theclosecompany.sales_book", "com.theclosecompany.sales_book.MainActivity"));
-            intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-            startActivity(intent);
         }
     }
 
