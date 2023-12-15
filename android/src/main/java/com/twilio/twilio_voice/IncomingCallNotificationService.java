@@ -157,7 +157,7 @@ public class IncomingCallNotificationService extends Service {
         Intent mainActivityIntent = new Intent();
         mainActivityIntent.setComponent(new ComponentName("com.theclosecompany.sales_book", "com.theclosecompany.sales_book.MainActivity"));
         mainActivityIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-        PendingIntent mainActivityPendingIntent = PendingIntent.getActivity(this, 0, mainActivityIntent, PendingIntent.FLAG_UPDATE_CURRENT);
+        PendingIntent mainActivityPendingIntent = PendingIntent.getActivity(this, 0, mainActivityIntent, flags);
 
         long[] mVibratePattern = new long[]{0, 400, 400, 400, 400, 400, 400, 400};
         Notification.Builder builder =
