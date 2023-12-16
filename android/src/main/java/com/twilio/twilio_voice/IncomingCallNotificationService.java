@@ -8,7 +8,6 @@ import android.app.PendingIntent;
 import android.app.Service;
 import android.content.Context;
 import android.content.Intent;
-import android.content.ComponentName;
 import android.content.SharedPreferences;
 import android.content.pm.ApplicationInfo;
 import android.graphics.Color;
@@ -154,6 +153,7 @@ public class IncomingCallNotificationService extends Service {
         acceptIntent.putExtra(Constants.INCOMING_CALL_INVITE, callInvite);
         acceptIntent.putExtra(Constants.INCOMING_CALL_NOTIFICATION_ID, notificationId);
        PendingIntent piAcceptIntent = PendingIntent.getService(getApplicationContext(), 0, acceptIntent, flags);
+
         long[] mVibratePattern = new long[]{0, 400, 400, 400, 400, 400, 400, 400};
         Notification.Builder builder =
                 new Notification.Builder(getApplicationContext(), channelId)
@@ -200,27 +200,27 @@ public class IncomingCallNotificationService extends Service {
         SoundPoolManager.getInstance(this).stopRinging();
 
         Intent activeCallIntent;
-        // if (origin == 0 && !isAppVisible()) {
-        //     Log.i(TAG, "Creating answerJavaActivity intent");
-        //     activeCallIntent = new Intent(this, AnswerJavaActivity.class);
-        // } else {
-        //     Log.i(TAG, "Creating answer broadcast intent");
-        activeCallIntent = new Intent();
-        // }
-        // activeCallIntent.setComponent(new ComponentName("com.theclosecompany.sales_book", "com.theclosecompany.sales_book.MainActivity"));
+        if (origin == 0 && !isAppVisible()) {
+            Log.i(TAG, "Creating answerJavaActivity intent");
+            activeCallIntent = new Intent(this, AnswerJavaActivity.class);
+        } else {
+            Log.i(TAG, "Creating answer broadcast intent");
+            activeCallIntent = new Intent();
+        }
+
         activeCallIntent.addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);
         activeCallIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         activeCallIntent.putExtra(Constants.INCOMING_CALL_INVITE, callInvite);
         activeCallIntent.putExtra(Constants.INCOMING_CALL_NOTIFICATION_ID, notificationId);
         activeCallIntent.putExtra(Constants.ACCEPT_CALL_ORIGIN, origin);
         activeCallIntent.setAction(Constants.ACTION_ACCEPT);
-        // if (origin == 0 && !isAppVisible()) {
-        //     startActivity(activeCallIntent);
-        //     Log.i(TAG, "starting activity");
-        // } else {
-        LocalBroadcastManager.getInstance(this).sendBroadcast(activeCallIntent);
-        Log.i(TAG, "sending broadcast intent");
-        // }
+        if (origin == 0 && !isAppVisible()) {
+            startActivity(activeCallIntent);
+            Log.i(TAG, "starting activity");
+        } else {
+            LocalBroadcastManager.getInstance(this).sendBroadcast(activeCallIntent);
+            Log.i(TAG, "sending broadcast intent");
+        }
     }
 
     private void reject(CallInvite callInvite) {
