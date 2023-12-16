@@ -33,7 +33,7 @@ import com.twilio.voice.CallInvite;
 public class BackgroundCallJavaActivity extends AppCompatActivity {
 
     private static String TAG = "BackgroundCallActivity";
-    public static final String TwilioPreferences = "com.twilio.twilio_voicePreferences";
+    public static final String TwilioPreferences = "mx.TwilioPreferences";
 
 
     //    private Call activeCall;
