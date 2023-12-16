@@ -195,7 +195,7 @@ public class IncomingCallNotificationService extends Service {
     }
 
     private void accept(CallInvite callInvite, int notificationId, int origin) {
-        // endForeground();
+        endForeground();
         Log.i(TAG, "accept call invite!");
         SoundPoolManager.getInstance(this).stopRinging();
 
