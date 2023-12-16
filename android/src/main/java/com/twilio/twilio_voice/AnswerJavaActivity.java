@@ -285,6 +285,7 @@ public class AnswerJavaActivity extends AppCompatActivity {
                     case Constants.ACTION_CANCEL_CALL:
                     case Constants.ACTION_TOGGLE_MUTE:
                     case Constants.ACTION_END_CALL:
+                    case Constants.ACTION_ACCEPT:
                         /*
                          * Handle the incoming or cancelled call invite
                          */

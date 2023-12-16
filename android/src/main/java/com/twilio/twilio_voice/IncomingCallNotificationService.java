@@ -200,27 +200,27 @@ public class IncomingCallNotificationService extends Service {
         SoundPoolManager.getInstance(this).stopRinging();
 
         Intent activeCallIntent;
-        if (origin == 0 && !isAppVisible()) {
-            Log.i(TAG, "Creating answerJavaActivity intent");
-            activeCallIntent = new Intent(this, AnswerJavaActivity.class);
-        } else {
-            Log.i(TAG, "Creating answer broadcast intent");
-            activeCallIntent = new Intent();
-        }
-        activeCallIntent.setComponent(new ComponentName("com.theclosecompany.sales_book", "com.theclosecompany.sales_book.MainActivity"));
+        // if (origin == 0 && !isAppVisible()) {
+        //     Log.i(TAG, "Creating answerJavaActivity intent");
+        //     activeCallIntent = new Intent(this, AnswerJavaActivity.class);
+        // } else {
+        //     Log.i(TAG, "Creating answer broadcast intent");
+        activeCallIntent = new Intent();
+        // }
+        // activeCallIntent.setComponent(new ComponentName("com.theclosecompany.sales_book", "com.theclosecompany.sales_book.MainActivity"));
         activeCallIntent.addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);
         activeCallIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         activeCallIntent.putExtra(Constants.INCOMING_CALL_INVITE, callInvite);
         activeCallIntent.putExtra(Constants.INCOMING_CALL_NOTIFICATION_ID, notificationId);
         activeCallIntent.putExtra(Constants.ACCEPT_CALL_ORIGIN, origin);
         activeCallIntent.setAction(Constants.ACTION_ACCEPT);
-        if (origin == 0 && !isAppVisible()) {
-            startActivity(activeCallIntent);
-            Log.i(TAG, "starting activity");
-        } else {
-            LocalBroadcastManager.getInstance(this).sendBroadcast(activeCallIntent);
-            Log.i(TAG, "sending broadcast intent");
-        }
+        // if (origin == 0 && !isAppVisible()) {
+        //     startActivity(activeCallIntent);
+        //     Log.i(TAG, "starting activity");
+        // } else {
+        LocalBroadcastManager.getInstance(this).sendBroadcast(activeCallIntent);
+        Log.i(TAG, "sending broadcast intent");
+        // }
     }
 
     private void reject(CallInvite callInvite) {
