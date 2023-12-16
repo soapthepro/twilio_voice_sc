@@ -156,11 +156,10 @@ public class TwilioVoicePlugin implements FlutterPlugin, MethodChannel.MethodCal
                         // }else{
                         //     answer();
                         // }
-                        int acceptOrigin = intent.getIntExtra(Constants.ACCEPT_CALL_ORIGIN,0); 
-                        answer(); 
-                        break;
-
+                    int acceptOrigin = intent.getIntExtra(Constants.ACCEPT_CALL_ORIGIN,0); 
+                    answer(); 
                     break;
+
                 case Constants.ACTION_TOGGLE_MUTE:
                     if (activeCall != null) {
                       boolean muted = activeCall.isMuted();
