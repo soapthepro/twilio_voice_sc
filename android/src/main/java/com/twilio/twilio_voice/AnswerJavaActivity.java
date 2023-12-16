@@ -34,7 +34,7 @@ import com.twilio.voice.CallInvite;
 public class AnswerJavaActivity extends AppCompatActivity {
 
     private static String TAG = "AnswerActivity";
-    public static final String TwilioPreferences = "mx.TwilioPreferences";
+    public static final String TwilioPreferences = "com.twilio.twilio_voicePreferences";
 
     private NotificationManager notificationManager;
     private boolean isReceiverRegistered = false;
@@ -187,23 +187,18 @@ public class AnswerJavaActivity extends AppCompatActivity {
 
 
     private void acceptCall() {
-        Log.d(TAG, "Accepting call");
-        Intent acceptIntent = new Intent(this, IncomingCallNotificationService.class);
-        acceptIntent.setAction(Constants.ACTION_ACCEPT);
-        acceptIntent.putExtra(Constants.INCOMING_CALL_INVITE, activeCallInvite);
-        acceptIntent.putExtra(Constants.ACCEPT_CALL_ORIGIN, 1);
-        acceptIntent.putExtra(Constants.INCOMING_CALL_NOTIFICATION_ID, activeCallNotificationId);
-        Log.d(TAG, "Clicked accept startService");
-        startService(acceptIntent);
-        if (TwilioVoicePlugin.hasStarted) {
-            finish();
-        } else {
-            Log.d(TAG, "Answering call");
-
-            activeCallInvite.accept(this, callListener);
-            notificationManager.cancel(activeCallNotificationId);
-
-        }
+        Log.d(TAG, "Accepting call"); 
+        Intent acceptIntent = new Intent(this, IncomingCallNotificationService.class); 
+        acceptIntent.setAction(Constants.ACTION_ACCEPT); 
+        acceptIntent.putExtra(Constants.INCOMING_CALL_INVITE, activeCallInvite); 
+        acceptIntent.putExtra(Constants.ACCEPT_CALL_ORIGIN, 0); 
+        acceptIntent.putExtra(Constants.INCOMING_CALL_NOTIFICATION_ID, activeCallNotificationId); 
+        Log.d(TAG, "Clicked accept startService"); 
+        startService(acceptIntent); 
+        //        if (TwilioVoicePlugin.hasStarted) { 
+        //            finish(); 
+        //        } else { Log.d(TAG, "Answering call"); activeCallInvite.accept(this, callListener); notificationManager.cancel(activeCallNotificationId); 
+        //        } 
     }
 
     private void startAnswerActivity(Call call) {
