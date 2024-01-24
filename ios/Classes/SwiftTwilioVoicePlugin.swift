@@ -559,7 +559,7 @@ public class SwiftTwilioVoicePlugin: NSObject, FlutterPlugin,  FlutterStreamHand
         let callerName:String? = callInvite.customParameters?["caller_name"];
         var from:String = callerName ?? callInvite.from ?? defaultCaller
         from = from.replacingOccurrences(of: "client:", with: "")
-        
+        from = from.replacingOccurrences(of: "_", with: " ")
         self.sendPhoneCallEvents(description: "Ringing|\(from)|\(callInvite.to)|Incoming\(formatCustomParams(params: callInvite.customParameters))", isError: false)
         reportIncomingCall(from: from, uuid: callInvite.uuid)
         self.callInvite = callInvite
@@ -603,6 +603,7 @@ public class SwiftTwilioVoicePlugin: NSObject, FlutterPlugin,  FlutterStreamHand
             var userName:String?
             if var from = from{
                 from = from.replacingOccurrences(of: "client:", with: "")
+                from = from.replacingOccurrences(of: "_", with: " ")
                 content.userInfo = ["type":"twilio-missed-call", "From":from]
                 if let to = to{
                     content.userInfo["To"] = to
@@ -615,6 +616,7 @@ public class SwiftTwilioVoicePlugin: NSObject, FlutterPlugin,  FlutterStreamHand
                 print("notificationCenter: caller name is null")
             }
             var callerNameNew =  from!.replacingOccurrences(of: "client:", with: "")
+            callerNameNew =  from!.replacingOccurrences(of: "_", with: "")
             let title = callerName ?? userName ?? self.clients["defaultCaller"] ?? self.defaultCaller
             content.title = String(format:  NSLocalizedString("Missed call from %@", comment: ""), callerNameNew ?? "User")
 
